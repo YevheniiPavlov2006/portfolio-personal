@@ -4,6 +4,7 @@
   --white1000: #ffffff;
   --white800: #F7F7F7;
   --text: #333333;
+  --bgk: #414042;
   --primary-color: #A8D5BA;
   --secondary-color: #D9F6E3;
   --blur: #a9cbf5;
@@ -239,18 +240,18 @@ h1 {
 .container-work {
   position: relative;
 }
-.button-view-all a{
+.button-view-all {
   position: absolute;
   z-index: 10000;
   right: 170px;
   bottom: 0px;
-
+  border: none;
+  background-color: transparent;
+}
+.button-view-all a{
   font-size: 20px;
   font-weight: 500;
   color: var(--blue-700);
-
-  border: none;
-  background-color: transparent;
 }
 @media (max-width: 1250px) {
   .button-view-all {
@@ -450,20 +451,29 @@ h1 {
 
 .work-grig {
   display: none;
-  background-color: var(--text);
+  background-color: var(--bgk);
   padding: 90px 0;
+  padding-bottom: 120px;
   border-radius: 20px;
   margin-top: 60px;
 }
 .work-grig .container {
   position: relative;
 }
-.button-back a {
+.button-back {
   position: absolute;
+  z-index: 10000;
+  right: 170px;
   bottom: -40px;
-
+  border: none;
+  background-color: transparent;
+}
+.button-back a{
+  font-size: 20px;
+  font-weight: 500;
   color: var(--white1000);
 }
+
 .work-grig .works-title {
   color: var(--white1000);
 }
@@ -650,7 +660,7 @@ h1 {
 
 
 .section-footer {
-  background-color: var(--text);
+  background-color: var(--bgk);
   border-radius: 20px 20px 0 0;
 }
 
