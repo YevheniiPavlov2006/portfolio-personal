@@ -18,3 +18,20 @@ new Swiper('.work-slider', {
     }
   }
 })
+
+
+
+const buttonViewAll = document.getElementById('button-viewAll')
+const worksSlider = document.getElementById('work')
+const workGrid = document.getElementById('workGrid')
+const buttonBack = document.getElementById('buttonBack')
+
+buttonViewAll.addEventListener('click', function(){
+  worksSlider.style.display = 'none'
+  workGrid.style.display = 'block'
+})
+
+buttonBack.addEventListener('click', function(){
+  worksSlider.style.display = 'block'
+  workGrid.style.display = 'none'
+})
