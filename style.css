@@ -266,6 +266,10 @@ h1 {
 @media (max-width: 600px) {
   .button-view-all {
     right: 45px;
+    bottom: 10px;
+  }
+  .button-view-all a {
+    font-size: 16px;
   }
 }
 @media (max-width: 500px) {
@@ -410,6 +414,7 @@ h1 {
   .work-card {
     box-shadow: none;
     border: 1px solid var(--gray);
+    box-shadow: none;
   }
 }
 @media(max-width:600px){
@@ -426,18 +431,22 @@ h1 {
   }
   .slider-button-panel {
     position: absolute;
-    top: -300px;
+    top: -280px;
     right: 40px;
     justify-content: end;
     width: 100px;
   }
   .swiper-button-next::after {
     margin-right: 0px;
-    font-size: 30px;
+    font-size: 25px;
   }
   .swiper-button-prev::after {
     margin-left: 0px;
-    font-size: 30px;
+    font-size: 25px;
+  }
+  .work-line {
+    display: flex;
+    padding: 40px 0;
   }
 }
 @media(max-width:500px){
@@ -472,6 +481,41 @@ h1 {
   font-size: 20px;
   font-weight: 500;
   color: var(--white1000);
+}
+
+@media (max-width: 1250px) {
+  .button-back {
+    right: 115px;
+  }
+}
+@media (max-width: 900px) {
+  .button-back {
+    right: 85px;
+  }
+}
+@media (max-width: 600px) {
+  .button-back a {
+    font-size: 18px;
+  }
+  .button-back {
+    right: 45px;
+  }
+  .work-grig {
+    border-radius: 12px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+  .work-card {
+    border-radius: 12px;
+  }
+  .card-img {
+    border-radius: 12px 12px 0 0;
+  }
+}
+@media (max-width: 500px) {
+  .button-back {
+    right: 20px;
+  }
 }
 
 .work-grig .works-title {
@@ -629,7 +673,7 @@ h1 {
 }
 @media(max-width:500px){
   .section-about {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 50px;
   }
   .about-photos-block {
@@ -727,6 +771,9 @@ h1 {
   }
 }
 @media(max-width:600px){
+  .section-footer {
+    border-radius: 12px 12px 0 0;
+  }
   .footer-text {
     font-size: 24px;
   }
