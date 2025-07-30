@@ -9,9 +9,8 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="section section-home" id="home">
+    <section class="section--fixed full-screen">
       <div class="container">
-
         <div class="header">
           <div class="header-logo">Portfolio</div>
           <div class="header-menu">
@@ -20,10 +19,21 @@
             <a href="#work">Works</a>
           </div>
         </div>
+        <div class="full-screen__content">
+          <div class="full-screen-quote">
+            "Don’t aim for success. Do what you love<br/> and believe in, and it will come naturally."<br/> <span>— David Frost</span>
+          </div>
+        </div>
+      </div>
+      <div class="full-screen-shadow-bottom"></div>
+      <div class="full-screen-shadow"></div>
+    </section>
 
+    <div class="section section-home" id="home">
+      <div class="container">
         <div class="main">
-          <div class="main-photo"></div>
-          <div class="main-info">
+          <div class="main-photo animation-part"></div>
+          <div class="main-info animation-part">
             <h1>Pavlov Yevhenii</h1>
             <hr>
             <div class="main-info-text">I write clean, efficient, and scalable code. Contact me and lets start!</div>
@@ -57,9 +67,6 @@
       <div class="container container-work">
         <div class="works">
           <h1 class="works-title">Works</h1>
-          <button class="button-view-all" id="button-viewAll"> <a href="#workGrid">
-            View all
-          </a></button>
 
           <div class="work-slider swiper-container">
             <div class="work-line swiper-wrapper ">
@@ -212,162 +219,6 @@
 
           </div>
         </div>
-      </div>
-    </div>
-
-    <div id="workGrid" class="section work-grig">
-      <div class="container">
-
-        <button id="buttonBack" class="button-back button-view-all">
-          <a href="#work">
-            Back
-          </a>
-        </button>
-
-        <h1 class="works-title">Works</h1>
-
-        <div class="works-grid--block">
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-1"></div>
-                  <div class="card-info">
-                    <a href="https://coffee-shop-starb.netlify.app/">coffee-shop-starb.netlify.app</a>
-                    <div class="card-name">Coffee shop</div>
-                    <div class="card-text">Одностраничный сайт.
-                      HTML/CSS/JS
-                      Есть адаптив.
-                      Красивый дизайн.
-                      Слайдер сделан через JavaScript вручную, без использования библиотек
-                    </div>
-                    <div class="data">24.02.25</div>
-                  </div>
-                </div>
-            </div>
-                
-            <div class="swiper-slide">
-                  <div class="work-card">
-                    <div class="card-img work-img-8"></div>
-                    <div class="card-info">
-                      <a href="https://aipie-demo.netlify.app/">aipie-demo.netlify.app</a>
-                      <div class="card-name">AiPieBeauty</div>
-                      <div class="card-text">Одностраничный сайт.
-                        HTML/CSS/JS
-                        Есть адаптив.
-                        Комерческий проект.
-                        Анимация на скрол телефона.
-                        Есть рабочая форма обратной связи.<br/>
-                        (сделано в команде)
-                        </div>
-                        <div class="data">28.06.25</div>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-9"></div>
-                  <div class="card-info">
-                    <a href="https://i-university.netlify.app/">i-university.netlify.app</a>
-                    <div class="card-name">University</div>
-                    <div class="card-text">Одностраничный сайт.
-                      HTML/CSS/JS
-                      Есть адаптив.
-                      Кометческий проект.
-                      Сайт для университета.
-                      Развертывание в блоке "частые вопросы".
-                      </div>
-                      <div class="data">20.06.25</div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-2"></div>
-                  <div class="card-info">
-                    <a href="https://innomavs.netlify.app/">innomavs.netlify.app/</a>
-                    <div class="card-name">Innoma.VS</div>
-                    <div class="card-text">Одностраничный сайт.
-                      HTML/CSS/JS 
-                      Есть адаптив.
-                      Слайдер сделан с помощью библиотеки swiper.js.
-                      Ссылка на ролик через canvas</div>
-                      <div class="data">28.03.25</div>
-                  </div>
-                </div>
-            </div>
-              
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-6"></div>
-                  <div class="card-info">
-                    <a href="https://t-pass-site.netlify.app/">t-pass-site.netlify.app/</a>
-                    <div class="card-name">T-pass</div>
-                    <div class="card-text">Одностраничный сайт.
-                      HTML/CSS
-                      Есть адаптив. 
-                      Красивый дизайн. Относительно простой сайт для практики верстки</div>
-                      <div class="data">19.11.25</div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-3"></div>
-                  <div class="card-info">
-                    <a href="https://saasto-personal.netlify.app/">saasto-personal.netlify.app/</a>
-                    <div class="card-name">SaaSto</div>
-                    <div class="card-text">Сайт одностраничный.
-                      HTML/CSS/JS
-                      Есть адаптив.
-                      Слайдер на библиотеке swiper.js.
-                      Кнопка переключатель</div>
-                      <div class="data">23.04.25</div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-4"></div>
-                  <div class="card-info">
-                    <a href="https://coffee-menu-site.netlify.app/">coffee-menu-site.netlify.app/</a>
-                    <div class="card-name">Coffee menu</div>
-                    <div class="card-text">Сайт-меню для стенда.
-                      HTML/CSS/JS
-                      Работа в LocalStorage.
-                      Можно добавлять напитки по отделам.
-                      Удалять их и изменять меню.</div>
-                      <div class="data">10.02.25</div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-5"></div>
-                  <div class="card-info">
-                    <a href="https://currency-converter-mysite.netlify.app/">currency-converter-mysite.netlify.app/</a>
-                    <div class="card-name">Currency Converter</div>
-                    <div class="card-text">Одностраничный сайт HTML/CSS/JS Есть адаптив. Работа с апи курсами валют. Удобный в использовании. Красивый и стильный дизайн</div>
-                    <div class="data">10.03.25</div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="work-card">
-                  <div class="card-img work-img-7"></div>
-                  <div class="card-info">
-                    <a href="https://habit-tracker-personal.netlify.app/">https://habit-tracker-personal.netlify.app/</a>
-                    <div class="card-name">Habbits tracker</div>
-                    <div class="card-text">Сайт–приложение Трекер привычек HTML/CSS/JS Работа с LocalStorage. Есть адаптив. Можно создавать новые привычки и стилизовать их.</div>
-                    <div class="data">04.04.25</div>
-                  </div>
-                </div>
-            </div>
-          </div>
       </div>
     </div>
 

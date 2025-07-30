@@ -19,19 +19,26 @@ new Swiper('.work-slider', {
   }
 })
 
+/*-------------------------------------------------------------------*/
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const ratio = entry.intersectionRatio;
 
-const buttonViewAll = document.getElementById('button-viewAll')
-const worksSlider = document.getElementById('work')
-const workGrid = document.getElementById('workGrid')
-const buttonBack = document.getElementById('buttonBack')
+    // Показываем, когда 30% видно
+    if (ratio >= 0.3) {
+      entry.target.classList.add('show');
+    }
 
-buttonViewAll.addEventListener('click', function(){
-  worksSlider.style.display = 'none'
-  workGrid.style.display = 'block'
-})
+    // Убираем, когда полностью ушел
+    if (ratio === 0) {
+      entry.target.classList.remove('show');
+    }
+  });
+}, {
+  threshold: [0, 0.3]
+});
 
-buttonBack.addEventListener('click', function(){
-  worksSlider.style.display = 'block'
-  workGrid.style.display = 'none'
-})
+document.querySelectorAll('.animation-part').forEach(el => {
+  observer.observe(el);
+});
