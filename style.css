@@ -524,7 +524,7 @@ h1 {
 
 .section-about {
   padding-top: 120px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 .about-content {
   display: flex;
@@ -648,7 +648,7 @@ h1 {
 @media(max-width:850px){
   .section-about {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
   }
   .about-photos-block {
     --size: 150px;
@@ -684,7 +684,7 @@ h1 {
 @media(max-width:500px){
   .section-about {
     padding-top: 80px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
   }
   .about-photos-block {
     --size: 150px;
@@ -715,8 +715,6 @@ h1 {
 
 .section-footer {
   background-color: var(--bgk);
-  margin-top: -30px;
-  border-radius: 30px 30px 0 0;
 }
 
 .footer-block {
@@ -794,10 +792,6 @@ h1 {
   .footer-button {
     font-size: 16px;
     padding: 14px 24px;
-  }
-  .section-footer {
-    border-radius: 20px 20px 0 0;
-    margin-top: -20px;
   }
 }
 @media(max-width:450px){
