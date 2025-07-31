@@ -200,10 +200,7 @@ button {
   min-width: 260px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--white800);
-
-  transform: translate(-80px);
-  
+  background-color: var(--white800);  
 }
 .main-info {
   display: flex;
