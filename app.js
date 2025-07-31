@@ -45,37 +45,37 @@ document.querySelectorAll('.animation-part').forEach(el => {
 
 
 
-  const block = document.querySelector('.about-photos-block');
-  const lines = document.querySelectorAll('.about-photo-line');
+const block = document.querySelector('.about-photos-block');
+const lines = document.querySelectorAll('.about-photo-line');
 
-  const observer1 = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        lines.forEach(line => line.classList.add('animated'));
-      } else {
-        lines.forEach(line => line.classList.remove('animated'));
-      }
-    },
-    {
-      threshold: 0.4,
+const observer1 = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.intersectionRatio >= 0.4) {
+      lines.forEach(line => line.classList.add('animated'));
+    } else if (entry.intersectionRatio === 0) {
+      lines.forEach(line => line.classList.remove('animated'));
     }
-  );
+  },
+  {
+    threshold: [0, 0.4], // следим за нулем и 40%
+  }
+);
 
-  observer1.observe(block);
+observer1.observe(block);
 
-  const info = document.querySelector('.about-info');
+const info = document.querySelector('.about-info');
 
-  const observer2 = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        info.classList.add('animated')
-      } else {
-        info.classList.remove('animated')
-      }
-    },
-    {
-      threshold: 0.4,
+const observer2 = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.intersectionRatio >= 0.4) {
+      info.classList.add('animated');
+    } else if (entry.intersectionRatio === 0) {
+      info.classList.remove('animated');
     }
-  );
+  },
+  {
+    threshold: [0, 0.4], // то же самое
+  }
+);
 
-  observer2.observe(info);
+observer2.observe(info);
