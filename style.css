@@ -27,7 +27,7 @@ body{
   font-family: Montserrat;   
   cursor: default;
   scroll-behavior: smooth;
-}   
+}  
 
 /*-----------------------------*/
 
@@ -174,6 +174,7 @@ button {
 
 .section-home {
   border-radius: 30px 30px 0 0;
+  box-shadow: 0px -3px 10px 1px #A8D5BA;
 }
 
 .main {
@@ -237,6 +238,31 @@ h1 {
 .main-info-media a img {
   width: 40px;
   aspect-ratio: 1;
+}
+.telegram {
+  transition: 0.4s;
+}
+.insta {
+  transition: 0.4s;
+}
+.whatsapp {
+  transition: 0.4s;
+}
+.github {
+  transition: 0.4s;
+}
+
+.telegram:hover {
+  filter: drop-shadow(0px 0px 5px cyan) drop-shadow(0px 0px 12px cyan);
+}
+.insta:hover {
+  filter: drop-shadow(0px 0px 5px #FF007F) drop-shadow(0px 0px 12px #FF007F);
+}
+.whatsapp:hover {
+  filter: drop-shadow(0 0 5px #09ff00) drop-shadow(0 0 12px #11ff00);
+}
+.github:hover{
+  filter: drop-shadow(0px 0px 5px rgb(140, 133, 238)) drop-shadow(0px 0px 5px rgb(139, 135, 191));
 }
 @keyframes main {
   0% {margin-right: -240px;}
@@ -366,6 +392,15 @@ h1 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.card-img-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
 }
 
 .work-img-1 {
@@ -394,6 +429,9 @@ h1 {
 }
 .work-img-9 {
   background-image: url(img/work-9.png);
+}
+.work-img-10 {
+  background-image: url(img/work-10.png);
 }
 
 .card-name {
@@ -746,12 +784,18 @@ h1 {
 }
 .footer-button {
   padding: 16px 32px;
-  background-color: var(--white800);
+  background: linear-gradient(145deg, #86e2ee, #ad7fde) !important;
+  box-shadow: 2px 2px 0 #733870 , 3px 3px 5px #555;
   border: none;
-  color: var(--text);
+  color: #fff;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 500;
+
+  transition: 0.4s;
+}
+.footer-button:hover {
+  box-shadow: 1px 1px 0 #733870 , 1px 1px 2px #555;
 }
 .footer-info-media {
   display: flex;
@@ -768,7 +812,7 @@ h1 {
   .footer-menu {
     display: none;
   }
-  .footer-button {
+  .footer .footer-button {
     font-size: 18px;
   }
   .footer-info-media a img {
@@ -789,7 +833,7 @@ h1 {
   .footer-info-media a img {
     width: 20px;
   }
-  .footer-button {
+  .footer .footer-button {
     font-size: 16px;
     padding: 14px 24px;
   }
@@ -799,8 +843,10 @@ h1 {
     font-size: 18px;
   }
   .footer-button {
+    width: 100%;
+  }
+  .footer .footer-button {
     padding: 12px 20px;
-    font-size: 14px;
   }
   .footer-info-media {
     gap: 10px;
