@@ -174,7 +174,7 @@ button {
 
 .section-home {
   border-radius: 30px 30px 0 0;
-  box-shadow: 0px -3px 10px 1px #A8D5BA;
+  box-shadow: 0px 0px 7px 1px #adadad;
 }
 
 .main {
@@ -256,10 +256,10 @@ h1 {
   filter: drop-shadow(0px 0px 5px cyan) drop-shadow(0px 0px 12px cyan);
 }
 .insta:hover {
-  filter: drop-shadow(0px 0px 5px #FF007F) drop-shadow(0px 0px 12px #FF007F);
+  filter: drop-shadow(0px 0px 5px #FF007F) drop-shadow(0px 0px 7px #FF007F) drop-shadow(0px 0px 10px #FF007F);
 }
 .whatsapp:hover {
-  filter: drop-shadow(0 0 5px #09ff00) drop-shadow(0 0 12px #11ff00);
+  filter: drop-shadow(0 0 5px #09ff00) drop-shadow(0 0 7px #11ff00) drop-shadow(0 0 10px #11ff00);
 }
 .github:hover{
   filter: drop-shadow(0px 0px 5px rgb(140, 133, 238)) drop-shadow(0px 0px 5px rgb(139, 135, 191));
@@ -608,6 +608,19 @@ h1 {
   width: var(--size);
   height: var(--size);
   overflow: hidden;
+
+  box-shadow: 0 0 4px 3px #b7b7b7;
+}
+.main-photo {
+  box-shadow: 0 0 4px 4px #747474;
+}
+@media (max-width:768px){
+  .about-photo {
+    box-shadow: 0 0 2px 1px #b7b7b7;
+  }
+  .main-photo {
+    box-shadow: 0 0 2px 2px #808080;
+  }
 }
 
 .about-photo-line {
@@ -781,21 +794,42 @@ h1 {
 .footer-menu a {
   color: var(--white800);
   font-size: 20px;
+  position: relative;
+}
+
+.footer-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 1px;
+  background-color: var(--white800);
+  transition: transform 1s ease;
+}
+
+.footer-menu a:hover::after {
+  transform: translateX(-50%) scaleX(0.6);
 }
 .footer-button {
   padding: 16px 32px;
-  background: linear-gradient(145deg, #86e2ee, #ad7fde) !important;
-  box-shadow: 2px 2px 0 #733870 , 3px 3px 5px #555;
+  background: linear-gradient(145deg, #86e2ee, #ad7fde);
+  box-shadow: 2px 2px 0 #733870 , 2px 2px 4px #555;
   border: none;
   color: #fff;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 500;
 
-  transition: 0.4s;
+  transition: 0.3s ease;
+
 }
 .footer-button:hover {
   box-shadow: 1px 1px 0 #733870 , 1px 1px 2px #555;
+  background: linear-gradient(145deg, #86e2ee, #ad7fde 80%);
+
 }
 .footer-info-media {
   display: flex;
