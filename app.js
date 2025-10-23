@@ -79,3 +79,18 @@ const observer2 = new IntersectionObserver(
 );
 
 observer2.observe(info);
+
+
+
+/*------------------------------------------------------------------------------------*/
+setTimeout(() => {
+  document.querySelector('.hello-screen-block').classList.add('close');
+}, 3700);
+
+setTimeout(() => {
+  document.querySelector('.hello-screen-block').classList.add('close-1');
+}, 5500);
+
+setTimeout(() => {
+  document.querySelector('.hello-screen-portfolio').classList.add('open');
+}, 2500);
