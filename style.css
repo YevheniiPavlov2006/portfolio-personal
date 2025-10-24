@@ -209,11 +209,11 @@ button {
   gap: 20px;
   max-width: 600px;
   width: 100%;
-  transform: translate(80px);
+  transform: translate(40px);
 
 }
 .animation-part {
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
   opacity: 0.6;
 }
 .show {
@@ -253,16 +253,20 @@ h1 {
 }
 
 .telegram:hover {
-  filter: drop-shadow(0px 0px 5px cyan) drop-shadow(0px 0px 12px cyan);
+  filter: drop-shadow(0px 0px 5px cyan) drop-shadow(0px 0px 6px rgb(112, 228, 228));
+  transform: translateY(-3px);
 }
 .insta:hover {
-  filter: drop-shadow(0px 0px 5px #FF007F) drop-shadow(0px 0px 7px #FF007F) drop-shadow(0px 0px 10px #FF007F);
+  filter: drop-shadow(0px 0px 5px #ff00b7) drop-shadow(0px 0px 7px #e4cadd) drop-shadow(0px 0px 8px #ebc4e0);
+  transform: translateY(-3px);
 }
 .whatsapp:hover {
-  filter: drop-shadow(0 0 5px #09ff00) drop-shadow(0 0 7px #11ff00) drop-shadow(0 0 10px #11ff00);
+  filter: drop-shadow(0 0 5px #09ff00) drop-shadow(0 0 7px #add493) drop-shadow(0 0 8px #a5c88e);
+  transform: translateY(-3px);
 }
 .github:hover{
   filter: drop-shadow(0px 0px 5px rgb(140, 133, 238)) drop-shadow(0px 0px 5px rgb(139, 135, 191));
+  transform: translateY(-3px);
 }
 @keyframes main {
   0% {margin-right: -240px;}
@@ -576,7 +580,7 @@ h1 {
   flex-direction: column;
   gap: 20px;
 
-  transform: translateX(60px);
+  transform: translateX(50px);
   opacity: 0.6;
 
   transition: transform 0.8s ease;
@@ -835,7 +839,7 @@ h1 {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 .footer-info-media a img {
   width: 32px;
@@ -883,7 +887,7 @@ h1 {
     padding: 12px 20px;
   }
   .footer-info-media {
-    gap: 10px;
+    gap: 14px;
   }
 }
 
