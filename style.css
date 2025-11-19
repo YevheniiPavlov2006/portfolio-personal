@@ -209,12 +209,10 @@ button {
   gap: 20px;
   max-width: 600px;
   width: 100%;
-  transform: translate(40px);
 
 }
 .animation-part {
   transition: all 0.4s ease-out;
-  opacity: 0.6;
 }
 .show {
   transform: translateY(0);
@@ -580,9 +578,6 @@ h1 {
   flex-direction: column;
   gap: 20px;
 
-  transform: translateX(50px);
-  opacity: 0.6;
-
   transition: transform 0.8s ease;
 }
 .about-info-title {
@@ -662,28 +657,24 @@ h1 {
   transform: rotateZ(-30deg);
 }
 
-.about-photo-line.animated:first-child {
+.about-photo-line:first-child {
   transform: translateY(-50%) rotateZ(-30deg) translateX(0px);
 }
-.about-photo-line.animated:nth-child(2) {
+.about-photo-line:nth-child(2) {
   transform: translateY(-50%) rotateZ(0deg) translateX(-0px);
 }
-.about-photo-line.animated:last-child {
+.about-photo-line:last-child {
   transform: translateY(-50%) rotateZ(30deg) translateX(0px);
 }
 
 /* Обратная компенсация вращения фото */
-.about-photo-line.animated:first-child .about-photo {
+.about-photo-line:first-child .about-photo {
   transform: rotateZ(30deg);
 }
-.about-photo-line.animated:last-child .about-photo {
+.about-photo-line:last-child .about-photo {
   transform: rotateZ(-30deg);
 }
 
-.about-info.animated {
-  transform: translateX(0);
-  opacity: 1;
-}
 
 @media(max-width:1300px){
   .about-photos-block {

@@ -21,27 +21,8 @@ new Swiper('.work-slider', {
 
 /*-------------------------------------------------------------------*/
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const ratio = entry.intersectionRatio;
 
-    // Показываем, когда 30% видно
-    if (ratio >= 0.4) {
-      entry.target.classList.add('show');
-    }
 
-    // Убираем, когда полностью ушел
-    if (ratio === 0) {
-      entry.target.classList.remove('show');
-    }
-  });
-}, {
-  threshold: [0, 0.4]
-});
-
-document.querySelectorAll('.animation-part').forEach(el => {
-  observer.observe(el);
-});
 
 
 
