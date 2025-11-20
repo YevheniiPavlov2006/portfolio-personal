@@ -24,45 +24,6 @@ new Swiper('.work-slider', {
 
 
 
-
-
-const block = document.querySelector('.about-photos-block');
-const lines = document.querySelectorAll('.about-photo-line');
-
-const observer1 = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.intersectionRatio >= 0.4) {
-      lines.forEach(line => line.classList.add('animated'));
-    } else if (entry.intersectionRatio === 0) {
-      lines.forEach(line => line.classList.remove('animated'));
-    }
-  },
-  {
-    threshold: [0, 0.4], // следим за нулем и 40%
-  }
-);
-
-observer1.observe(block);
-
-const info = document.querySelector('.about-info');
-
-const observer2 = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.intersectionRatio >= 0.4) {
-      info.classList.add('animated');
-    } else if (entry.intersectionRatio === 0) {
-      info.classList.remove('animated');
-    }
-  },
-  {
-    threshold: [0, 0.4], // то же самое
-  }
-);
-
-observer2.observe(info);
-
-
-
 /*------------------------------------------------------------------------------------*/
 setTimeout(() => {
   document.querySelector('.hello-screen-block').classList.add('close');
@@ -75,3 +36,136 @@ setTimeout(() => {
 setTimeout(() => {
   document.querySelector('.hello-screen-portfolio').classList.add('open');
 }, 2500);
+
+
+
+const burgerButton = document.getElementById('burger-button')
+
+const burgerButtonActiveClass = 'active'
+
+burgerButton.addEventListener('click', function(){
+  burgerButton.classList.toggle(burgerButtonActiveClass)
+})
+
+
+const ranges = Array.from(document.querySelectorAll('[data-range]'))
+
+ranges.forEach(range => {
+  const control1 = range.querySelector('[data-range-control-1]')
+  const control2 = range.querySelector('[data-range-control-2]')
+
+  const label1 = range.querySelector('[data-control-label-1]')
+  const label2 = range.querySelector('[data-control-label-2]')
+
+  const track = range.querySelector('[data-range-track]')
+
+  if (!control1 || !label1 || !control2 || !label2 || !track) return console.log('cidioc')
+
+  const rangeMin = Number(range.getAttribute('data-range-min'))
+  const rangeMax = Number(range.getAttribute('data-range-max'))
+
+  let value1 = 0
+  let value2 = 1
+
+  let isControlMoving1 = false
+  let isControlMoving2 = false
+
+  updateCSSVariables()
+  updateLabels()
+
+  control1.addEventListener('mousedown', () => {
+    isControlMoving1 = true
+  })
+  control1.addEventListener('touchstart', () => {
+    isControlMoving1 = true
+  })
+
+  control2.addEventListener('mousedown', () => {
+    isControlMoving2 = true
+  })
+  control2.addEventListener('touchstart', () => {
+    isControlMoving2 = true
+  })
+
+  window.addEventListener('mousemove', (e) => {
+    if(!isControlMoving1 && !isControlMoving2) return 
+
+    const mouseX = e.touches ? e.touches[0].clientX : e.clientX
+    const trackX = track.getBoundingClientRect().x
+    const trackWidth = track.getBoundingClientRect().width
+
+    const value = normalize((mouseX - trackX) / trackWidth)
+
+    if(isControlMoving1) return updateValue1(value)
+    if(isControlMoving2) return updateValue2(value)
+  })
+
+  window.addEventListener('touchmove', (e) => {
+    if(!isControlMoving1 && !isControlMoving2) return 
+
+    const mouseX = e.touches ? e.touches[0].clientX : e.clientX
+    const trackX = track.getBoundingClientRect().x
+    const trackWidth = track.getBoundingClientRect().width
+
+    const value = normalize((mouseX - trackX) / trackWidth)
+
+    if(isControlMoving1) return updateValue1(value)
+    if(isControlMoving2) return updateValue2(value)
+  })
+
+
+
+  
+  function updateValue1(value) {
+    value1 = value
+    updateCSSVariables()
+    updateLabels()
+  }
+  function updateValue2(value) {
+    value2 = value
+    updateCSSVariables()
+    updateLabels()
+  }
+  function updateLabels() {
+    const amplitude = rangeMax - rangeMin
+    label1.innerHTML = Math.round(value1 * amplitude + rangeMin)
+    label2.innerHTML = Math.round(value2 * amplitude + rangeMin)
+  }
+  function updateCSSVariables() {
+    range.style.setProperty('--value-1', value1)
+    range.style.setProperty('--value-2', value2)
+    range.style.setProperty('--min', Math.min(value1, value2))
+    range.style.setProperty('--max', Math.max(value1, value2))
+  }
+
+
+
+
+  window.addEventListener('mouseup', () => {
+    isControlMoving1 = false
+    isControlMoving2 = false
+  })
+  window.addEventListener('touchend', () => {
+    isControlMoving1 = false
+    isControlMoving2 = false
+  })
+  window.addEventListener('mouseleave', () => {
+    isControlMoving1 = false
+    isControlMoving2 = false
+  })
+  window.addEventListener('touchcancel', () => {
+    isControlMoving1 = false
+    isControlMoving2 = false
+  })
+  
+
+})
+
+function normalize(value) {
+  return clamp (0, value, 1)
+}
+function clamp(min, value, max) {
+  if(value < min) return min
+  if(value > max) return max
+  return value
+}
