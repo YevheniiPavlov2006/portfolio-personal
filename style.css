@@ -365,7 +365,7 @@ h1 {
 
 .work-card {
   text-align: center;
-  border: 1px solid var(--gray);
+  border: 1px solid #d1d1d1;
   border-radius: 20px;
 
   display: flex;
@@ -375,6 +375,7 @@ h1 {
   height: 450px;
 
   background-color: var(--white1000);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.4);
 }
 .work-card:hover {
   box-shadow: none;
@@ -507,9 +508,6 @@ h1 {
 }
 @media (max-width:700px) {
   .work-card {
-    box-shadow: none;
-    border: 1px solid var(--gray);
-    box-shadow: none;
     border-radius: 15px;
   }
   .card-img {
@@ -814,7 +812,7 @@ h1 {
 .footer-button {
   padding: 16px 32px;
   background: linear-gradient(145deg, #86e2ee, #ad7fde);
-  box-shadow: 2px 2px 0 #733870 , 2px 2px 4px #555;
+  box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.4);
   border: none;
   color: #fff;
   border-radius: 10px;
@@ -825,8 +823,7 @@ h1 {
 
 }
 .footer-button:hover {
-  box-shadow: 1px 1px 0 #733870 , 1px 1px 2px #555;
-  background: linear-gradient(145deg, #86e2ee, #ad7fde 80%);
+  box-shadow: none;
 
 }
 .footer-info-media {
@@ -1002,7 +999,7 @@ h1 {
 .css-item-card {
   width: 100%;
   text-align: center;
-  border: 1px solid var(--gray);
+  border: 1px solid #d1d1d1;
   border-radius: 20px;
   padding: 8px;
 
@@ -1012,6 +1009,10 @@ h1 {
   justify-content: start;
 
   background-color: var(--white1000);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+.css-item-card:hover {
+  box-shadow: none;
 }
 .css-card-view {
   width: 100%;
@@ -1048,6 +1049,8 @@ h1 {
 @media(max-width:480px){
   .css-container {
     grid-template-columns: 1fr;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
