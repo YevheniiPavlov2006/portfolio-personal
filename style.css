@@ -185,7 +185,7 @@ button {
   transition: transform 1s ease;
 }
 
-@media(min-width:1800px) {
+@media(min-width:1600px) {
   .header-menu a {
     font-size: 26px;
   }
@@ -199,8 +199,33 @@ button {
 }
 
 .shadow {
+  max-width: calc(100vw - 240px);
   border-radius: 30px 30px 0 0;
   box-shadow: 0px 0px 7px 1px #adadad;
+}
+@media (max-width:1600px) {
+  .shadow {
+    max-width: calc(100vw - 100px);
+  }
+  .full-screen .container {
+    padding: 0 60px;
+  }
+}
+@media (max-width:800px) {
+  .shadow {
+    max-width: calc(100vw - 60px);
+  }
+  .full-screen .container {
+    padding: 0 40px;
+  }
+}
+@media (max-width:600px) {
+  .shadow {
+    max-width: calc(100vw);
+  }
+  .full-screen .container {
+    padding: 0 15px;
+  }
 }
 .section-home {
   border-radius: 30px 30px 0 0;
