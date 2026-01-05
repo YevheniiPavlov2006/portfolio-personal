@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&display=swap');
 
 
+* {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
 :root {
   --white1000: #ffffff;
   --white800: #F7F7F7;
@@ -12,6 +19,132 @@
   --gray: #959595;
   --blue-700: #2563eb;
 }
+
+:root[data-theme="dark"] {
+  --white1000: #ffffff;
+  --white800: #262c37;
+  --text: #F7F7F7;
+  --bgk: #414042;
+  --primary-color: #A8D5BA;
+  --secondary-color: #D9F6E3;
+  --blur: #a9cbf5;
+  --gray: #959595;
+  --blue-700: #2563eb;
+}
+[data-theme="dark"] h1{
+  color: rgb(20, 158, 202);
+}
+
+.main-info-media.light {
+  display: none;
+}
+
+[data-theme="dark"] .main-photo {
+  box-shadow: 0 0 4px 4px rgb(20, 158, 202);
+}
+[data-theme="dark"] .about-photo {
+  box-shadow: 0 0 2px 2px rgb(20, 158, 202);
+}
+[data-theme="dark"] .shadow {
+  box-shadow: 0 0 7px 1px rgb(20, 158, 202);
+}
+[data-theme="dark"] .card-name {
+  color: #262c37;
+}
+[data-theme="dark"] .card-text {
+  color: #262c37;
+}
+[data-theme="dark"] .main-info-media {
+  display: none;
+}
+[data-theme="dark"] .main-info-media.light {
+  display: flex;
+}
+[data-theme="dark"] .footer-text {
+  color: #F7F7F7;
+}
+[data-theme="dark"] .footer-menu a {
+  color: #F7F7F7;
+}
+[data-theme="dark"] .header-menu a {
+  color: #262c37;
+}
+
+/*-------------------------------------theme-btn---------------------------------*/
+.theme-toggle {
+  position: relative;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,0.1),
+    0 1px 2px rgba(0,0,0,0.15);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Кружок */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+
+  transition: transform 0.3s ease;
+}
+
+/* Иконки */
+.theme-toggle .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle .sun {
+  left: 5px;
+  top: 14px;
+}
+
+.theme-toggle .moon {
+  right: 5px;
+  top: 14px;
+  opacity: 0;
+}
+
+/* 🌙 ТЕМНАЯ ТЕМА */
+:root[data-theme="dark"] .theme-toggle {
+  background: linear-gradient(145deg, #1e293b, #262c37);
+  box-shadow:
+    inset 0 2px 2px rgba(0,0,0,0.4),
+    0 2px 2px rgba(0,0,0,0.5);
+}
+
+:root[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(26px);
+}
+
+:root[data-theme="dark"] .theme-toggle .sun {
+  opacity: 0;
+}
+
+:root[data-theme="dark"] .theme-toggle .moon {
+  opacity: 1;
+}
+
+
 
 *{   
   margin: 0;   
@@ -167,6 +300,7 @@ button {
 .header-menu {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 .header-menu a {
   color: var(--text);
@@ -205,7 +339,7 @@ button {
 }
 @media (max-width:1600px) {
   .shadow {
-    max-width: calc(100vw - 100px);
+    max-width: calc(100vw - 120px);
   }
   .full-screen .container {
     padding: 0 60px;
@@ -226,6 +360,9 @@ button {
   .full-screen .container {
     padding: 0 15px;
   }
+  .header-menu a {
+    display: none;
+  }
 }
 .section-home {
   border-radius: 30px 30px 0 0;
@@ -235,7 +372,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 150px 0;
+  padding: 140px 0;
+  padding-bottom: 80px;
   width: 100%;
   gap: 50px;
   margin: 0 auto;
@@ -364,7 +502,6 @@ h1 {
     font-size: 14px;
   }
   .header-logo {
-    font-size: 20px;
   }
 }
 @media(max-width:600px){
@@ -398,7 +535,7 @@ h1 {
     gap: 12px;
   }
   .header-logo {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
@@ -617,8 +754,8 @@ h1 {
 
 
 .section-about {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .about-content {
   display: flex;
@@ -1039,7 +1176,7 @@ h1 {
 
 
 .css{
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 .css-container {
   padding: 50px 0;
