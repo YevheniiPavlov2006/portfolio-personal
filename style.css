@@ -69,6 +69,16 @@
 [data-theme="dark"] .header-menu a {
   color: #262c37;
 }
+[data-theme="dark"] .full-screen__content {
+  background-color: rgba(38, 44, 55, 0.9);
+  color: #F7F7F7;
+}
+[data-theme="dark"] .full-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
 
 /*-------------------------------------theme-btn---------------------------------*/
 .theme-toggle {
