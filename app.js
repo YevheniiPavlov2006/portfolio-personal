@@ -185,3 +185,27 @@ function clamp(min, value, max) {
   if(value > max) return max
   return value
 }
+
+
+
+
+/*-------------------------------------------------------------------------------------*/
+  const toTop = document.getElementById('toTop');
+  const mainSection = document.getElementById('mainSection');
+
+  window.addEventListener('scroll', () => {
+    const rect = mainSection.getBoundingClientRect();
+
+    if (rect.top <= 0) {
+      toTop.classList.add('show');
+    } else {
+      toTop.classList.remove('show');
+    }
+  });
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
