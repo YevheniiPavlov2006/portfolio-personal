@@ -134,6 +134,19 @@
   opacity: 0;
 }
 
+@media (max-width:600px) {
+  .theme-toggle .sun {
+    left: 7px;
+    top: 16px;
+  }
+
+  .theme-toggle .moon {
+    right: 7px;
+    top: 16px;
+    opacity: 0;
+  }
+}
+
 /* 🌙 ТЕМНАЯ ТЕМА */
 :root[data-theme="dark"] .theme-toggle {
   background: linear-gradient(145deg, #1e293b, #262c37);
