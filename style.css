@@ -136,13 +136,13 @@
 
 @media (max-width:600px) {
   .theme-toggle .sun {
-    left: 7px;
-    top: 16px;
+    left: 6px;
+    top: 15px;
   }
 
   .theme-toggle .moon {
-    right: 7px;
-    top: 16px;
+    right: 6px;
+    top: 15px;
     opacity: 0;
   }
 }
