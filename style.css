@@ -80,6 +80,120 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
+/*--------------------------------------header-burger-button-------------------------------*/
+
+.burger-button {
+  display: none;
+}
+
+@media (max-width:600px){
+  .burger-button {
+    display: block;
+  }
+}
+
+.burger-button {
+  --height: 18px;
+  --ratio: 1.5;
+  --width: calc(var(--height) * var(--ratio));
+  --color: #000000;
+  z-index: 10000000000000000000000000000000000000000000000000000000;
+
+  width: var(--width);
+  height: var(--height);
+
+  position: relative;
+  cursor: pointer;
+}
+.burger-button::before, .burger-button::after, .burger-button div {
+  content: '';
+
+  width: var(--width);
+  height: 0px;
+
+  position: absolute;
+  left: 0%;
+
+  transform-origin: center;
+  transition: 0.3s;
+ 
+  border: 1px solid var(--color);
+
+  box-sizing: border-box;
+}
+.burger-button::before {
+  top: 0;
+}
+.burger-button::after {
+  bottom: 0;
+}
+.burger-button div {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-button.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotateZ(45deg);
+}
+.burger-button.active::after {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.burger-button.active  div {
+  opacity: 0;
+}
+
+
+.sidebar {
+  display: none;
+}
+@media (max-width:600px){
+  .sidebar {
+    display: flex;
+  }
+}
+.sidebar {
+  --background: #ffffff;
+
+
+  position: fixed;
+  right: -110%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 300px;
+  max-width: 70vw;
+  height: 70vh;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10000000000000000000;
+
+  transition: 0.3s;
+  padding: 10px;
+  
+  background-color: var(--background);
+  border-radius: 20px 0 0 20px;
+  box-shadow: 0 0 7px 1px #adadad;;
+}
+.sidebar .header-menu {
+  flex-direction: column;
+  gap: 25px;
+}
+.sidebar .header-menu a {
+  font-size: 22px;
+}
+.sidebar.opened {
+  right: 0px;
+}
+
+.body--fixed {
+  overflow: hidden;
+}
+
 /*-------------------------------------theme-btn---------------------------------*/
 .theme-toggle {
   position: relative;
@@ -165,6 +279,14 @@
 
 :root[data-theme="dark"] .theme-toggle .moon {
   opacity: 1;
+}
+
+:root[data-theme="dark"] .sidebar {
+  box-shadow: 0 0 7px 1px rgb(20, 158, 202);
+  background-color: var(--white800);
+}
+:root[data-theme="dark"] .sidebar .header-menu a {
+  color: #F7F7F7;
 }
 
 
@@ -383,7 +505,10 @@ button {
   .full-screen .container {
     padding: 0 15px;
   }
-  .header-menu a {
+  .header .theme-toggle {
+    display: none;
+  }
+  .header .header-menu a {
     display: none;
   }
 }
@@ -539,7 +664,7 @@ h1 {
   .container {
     padding: 0 15px;
   }
-  .header-menu {
+  .header .header-menu {
     gap: 15px;
   }
 }
@@ -582,7 +707,9 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  height: 450px;
+  height: 480px;
+
+
 
   background-color: var(--white1000);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.4);
@@ -598,7 +725,7 @@ h1 {
 }
 .card-img {
   width: calc(100% - 16px);
-  height: 180px;
+  height: 180px !important;
   border-radius: 12px;
   margin: 8px;
   
@@ -611,46 +738,58 @@ h1 {
 
 .card-img-shadow {
   width: 100%;
-  height: 100%;
+  height: 180px;
   background-color: rgba(0, 0, 0, 0.06);
   border-radius: 12px;
 }
 
 .work-img-1 {
   background-image: url(img/work-1.png);
+  height: 180px !important;
 }
 .work-img-3 {
   background-image: url(img/work-2.png);
+  height: 180px !important;
 }
 .work-img-2 {
   background-image: url(img/work-3.png);
+  height: 180px !important;
 }
 .work-img-4 {
   background-image: url(img/work-4.png);
+  height: 180px !important;
 }
 .work-img-5 {
   background-image: url(img/work-5.png);
+  height: 180px !important;
 }
 .work-img-6 {
   background-image: url(img/work-6.png);
+  height: 180px !important;
 }
 .work-img-7 {
   background-image: url(img/work-7.png);
+  height: 180px !important;
 }
 .work-img-8 {
   background-image: url(img/work-8.png);
+  height: 180px !important;
 }
 .work-img-9 {
   background-image: url(img/work-9.png);
+  height: 180px !important;
 }
 .work-img-10 {
   background-image: url(img/work-10.png);
+  height: 180px !important;
 }
 .work-img-11 {
   background-image: url(img/work-11.png);
+  height: 180px !important;
 }
 .work-img-12 {
   background-image: url(img/work-12.png);
+  height: 180px !important;
 }
 
 .card-name {
@@ -662,7 +801,6 @@ h1 {
   color: var(--text);
   font-size: 14px;
   line-height: 1.7;
-  margin-top: 10px;
 }
 .data {
   position: absolute;
@@ -1298,7 +1436,7 @@ h1 {
 
 
 
-.burger-button {
+.burger-button-example {
   --height: 25px;
   --ratio: 1.5;
   --width: calc(var(--height) * var(--ratio));
@@ -1310,7 +1448,7 @@ h1 {
   position: relative;
   cursor: pointer;
 }
-.burger-button::before, .burger-button::after, .burger-button div {
+.burger-button-example::before, .burger-button-example::after, .burger-button-example div {
   content: '';
 
   width: var(--width);
@@ -1326,27 +1464,27 @@ h1 {
 
   box-sizing: border-box;
 }
-.burger-button::before {
+.burger-button-example::before {
   top: 0;
 }
-.burger-button::after {
+.burger-button-example::after {
   bottom: 0;
 }
-.burger-button div {
+.burger-button-example div {
   top: 50%;
   transform: translateY(-50%);
 }
 
-.burger-button.active::before {
+.burger-button-example.active-example::before {
   top: 50%;
   transform: translateY(-50%) rotateZ(45deg);
 }
-.burger-button.active::after {
+.burger-button-example.active-example::after {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
 
-.burger-button.active  div {
+.burger-button-example.active-example  div {
   opacity: 0;
 }
 

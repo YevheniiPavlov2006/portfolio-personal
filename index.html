@@ -10,6 +10,20 @@
 <body>
   <div class="wrapper">
 
+    <aside class="sidebar" id="sidebar">
+      <div class="container">
+        <div class="header-menu">
+          <a href="#home">Home</a>
+          <a href="#about">About me</a>
+          <a href="#work">Works</a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
     <button id="toTop" class="to-top">↑ <br/>TOP</button>
 
 
@@ -29,6 +43,9 @@
         <div class="header">
           <div class="header-logo">Portfolio</div>
           <div class="header-menu">
+            <div class="burger-button" id="burger-button">
+              <div></div>
+            </div>
             <a href="#home">Home</a>
             <a href="#about">About me</a>
             <a href="#work">Works</a>
@@ -115,11 +132,12 @@
                     <div class="card-info">
                       <a href="https://techno-collection.netlify.app/">techno-collection.netlify.app</a>
                       <div class="card-name">Techno-collection</div>
-                      <div class="card-text">Многостраничный сайт.
-                        Интернет-магазин техники.
-                        HTML/CSS/JS
-                        Современный дизайн. 
-                        Слайдер сделан через JavaScript вручную, без использования библиотек
+                      <div class="card-text">
+                        Multi-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Electronics online store.
+                        Modern design.
+                        Slider implemented manually in JavaScript, without using libraries.
                       </div>
                       <div class="data">10.08.25</div>
                     </div>
@@ -134,11 +152,12 @@
                     <div class="card-info">
                       <a href="https://coffee-shop-starb.netlify.app/">coffee-shop-starb.netlify.app</a>
                       <div class="card-name">Coffee shop</div>
-                      <div class="card-text">Одностраничный сайт.
-                        HTML/CSS/JS
-                        Есть адаптив.
-                        Красивый дизайн.
-                        Слайдер сделан через JavaScript вручную, без использования библиотек
+                      <div class="card-text">
+                        Single-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Responsive layout.
+                        Attractive design.
+                        Slider implemented manually in JavaScript, without using libraries.
                       </div>
                       <div class="data">24.02.25</div>
                     </div>
@@ -153,12 +172,13 @@
                     <div class="card-info">
                       <a href="https://lavash-lv-new.netlify.app">lavash-lv-new.netlify.app</a>
                       <div class="card-name">Lavash</div>
-                      <div class="card-text">Многостраничный сайт. 
-                        Комерческий проект. 
-                        Литовский интернет-магазин.
-                        HTML/CSS/JS
-                        Красивый дизайн.
-                        Сделана только верстка страниц.
+                      <div class="card-text">
+                        Multi-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Commercial project.
+                        Lithuanian online store.
+                        Attractive design.
+                        Only the page layout (markup) was completed.
                       </div>
                       <div class="data">26.09.25</div>
                     </div>
@@ -173,10 +193,11 @@
                     <div class="card-info">
                       <a href="https://techno-collection.netlify.app/">briva.netlify.app</a>
                       <div class="card-name">Briva</div>
-                      <div class="card-text">Многостраничный сайт.
-                        Интернет-магазин.
-                        HTML/CSS/JS
-                        Верстка сайта. 
+                      <div class="card-text">
+                        Multi-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Online store.
+                        Website layout (markup).
                       </div>
                       <div class="data">14.12.25</div>
                     </div>
@@ -191,13 +212,14 @@
                       <div class="card-info">
                         <a href="https://aipie-demo.netlify.app/">aipie-demo.netlify.app</a>
                         <div class="card-name">AiPieBeauty</div>
-                        <div class="card-text">Одностраничный сайт.
-                          HTML/CSS/JS
-                          Есть адаптив.
-                          Комерческий проект.
-                          Анимация на скрол телефона.
-                          Есть рабочая форма обратной связи.<br/>
-                          (сделано в команде)
+                        <div class="card-text">
+                          Single-page website.
+                          HTML / CSS / JavaScript.<br/>
+                          Responsive layout.
+                          Commercial project.
+                          Phone scroll animation.
+                          Working contact (feedback) form.
+                          (Completed as part of a team.)
                           </div>
                           <div class="data">24.02.25</div>
                       </div>
@@ -212,14 +234,15 @@
                     <div class="card-info">
                       <a href="https://i-university.netlify.app/">i-university.netlify.app</a>
                       <div class="card-name">University</div>
-                      <div class="card-text">Одностраничный сайт.
-                        HTML/CSS/JS
-                        Есть адаптив.
-                        Кометческий проект.
-                        Сайт для университета.
-                        Развертывание в блоке "частые вопросы".
-                        </div>
-                        <div class="data">24.02.25</div>
+                      <div class="card-text">
+                        Single-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Responsive layout.
+                        Commercial project.
+                        Website for a university.
+                        Expandable (accordion-style) section in the “Frequently Asked Questions” block.
+                      </div>
+                      <div class="data">24.02.25</div>
                     </div>
                   </div>
                 </div>
@@ -232,12 +255,14 @@
                     <div class="card-info">
                       <a href="https://innomavs.netlify.app/">innomavs.netlify.app/</a>
                       <div class="card-name">Innoma.VS</div>
-                      <div class="card-text">Одностраничный сайт.
-                        HTML/CSS/JS 
-                        Есть адаптив.
-                        Слайдер сделан с помощью библиотеки swiper.js.
-                        Ссылка на ролик через canvas</div>
-                        <div class="data">28.03.25</div>
+                      <div class="card-text">
+                        Single-page website.
+                        HTML / CSS / JavaScript.<br/>
+                        Responsive layout.
+                        Slider implemented using the Swiper.js library.
+                        Video link implemented via canvas.
+                      </div>
+                      <div class="data">28.03.25</div>
                     </div>
                   </div>
                 </div>
@@ -250,29 +275,14 @@
                     <div class="card-info">
                       <a href="https://t-pass-site.netlify.app/">t-pass-site.netlify.app/</a>
                       <div class="card-name">T-pass</div>
-                      <div class="card-text">Одностраничный сайт.
-                        HTML/CSS
-                        Есть адаптив. 
-                        Красивый дизайн. Относительно простой сайт для практики верстки</div>
+                      <div class="card-text">
+                        Single-page website.
+                        HTML / CSS.<br/>
+                        Responsive layout.
+                        Attractive design.
+                        Relatively simple website for practicing layout.
+                      </div>
                         <div class="data">19.11.25</div>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="swiper-slide">
-                  <div class="work-card">
-                    <div class="card-img work-img-3">
-                      <div class="card-img-shadow"></div>
-                    </div>
-                    <div class="card-info">
-                      <a href="https://saasto-personal.netlify.app/">saasto-personal.netlify.app/</a>
-                      <div class="card-name">SaaSto</div>
-                      <div class="card-text">Сайт одностраничный.
-                        HTML/CSS/JS
-                        Есть адаптив.
-                        Слайдер на библиотеке swiper.js.
-                        Кнопка переключатель</div>
-                        <div class="data">23.04.25</div>
                     </div>
                   </div>
                 </div>
@@ -285,7 +295,14 @@
                     <div class="card-info">
                       <a href="https://currency-converter-mysite.netlify.app/">currency-converter-mysite.netlify.app/</a>
                       <div class="card-name">Currency Converter</div>
-                      <div class="card-text">Одностраничный сайт HTML/CSS/JS Есть адаптив. Работа с апи курсами валют. Удобный в использовании. Красивый и стильный дизайн</div>
+                      <div class="card-text">
+                        Single-page website.
+                        HTML / CSS / JavaScript. <br/>
+                        Responsive layout.
+                        Works with currency exchange rate API.
+                        User-friendly.
+                        Attractive and stylish design.
+                      </div>
                       <div class="data">10.03.25</div>
                     </div>
                   </div>
@@ -342,7 +359,7 @@
               </div>
               <div class="css-item-card">
                 <div class="css-card-view">
-                  <div class="burger-button" id="burger-button">
+                  <div class="burger-button-example" id="burger-button-example">
                     <div></div>
                   </div>
                 </div>

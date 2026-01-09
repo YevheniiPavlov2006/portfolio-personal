@@ -10,10 +10,10 @@ new Swiper('.work-slider', {
     320: {
       slidesPerView: 1,
     },
-    700: {
+    750: {
       slidesPerView: 2,
     },
-    1050: {
+    1220: {
       slidesPerView: 3,
     }
   }
@@ -22,19 +22,21 @@ new Swiper('.work-slider', {
 /*----------------------------Theme---------------------------------------*/
 
 
-const toggleBtn = document.getElementById('themeToggle');
+const toggleBtns = document.querySelectorAll('.theme-toggle');
 const root = document.documentElement;
 
-toggleBtn.addEventListener('click', () => {
-  const currentTheme = root.getAttribute('data-theme');
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const currentTheme = root.getAttribute('data-theme');
 
-  if (currentTheme === 'dark') {
-    root.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    root.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  }
+    if (currentTheme === 'dark') {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
 });
 
 
@@ -56,11 +58,16 @@ setTimeout(() => {
 
 
 const burgerButton = document.getElementById('burger-button')
+const sidebar = document.getElementById('sidebar')
 
 const burgerButtonActiveClass = 'active'
+const sidebarActiveClass = 'opened'
+const bodyFixedClass = 'body--fixed'
 
 burgerButton.addEventListener('click', function(){
   burgerButton.classList.toggle(burgerButtonActiveClass)
+  sidebar.classList.toggle(sidebarActiveClass)
+  document.body.classList.toggle(bodyFixedClass)
 })
 
 
@@ -209,3 +216,13 @@ function clamp(min, value, max) {
       behavior: 'smooth'
     });
   });
+
+
+  /*--------------------------------------------------------------------------*/
+  const burgerButtonExample = document.getElementById('burger-button-example')
+
+  const burgerButtonActiveClassExample = 'active-example'
+
+  burgerButtonExample.addEventListener('click', function(){
+    burgerButtonExample.classList.toggle(burgerButtonActiveClassExample)
+  })
