@@ -358,7 +358,7 @@ button {
 }
 .full-screen {
   position: relative;
-  height: 120vh;
+  height: 100vh;
   background-image: url('img/full.screen-img.jpeg');
   background-size: cover;
   background-position: top center;
