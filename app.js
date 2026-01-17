@@ -64,10 +64,71 @@ const burgerButtonActiveClass = 'active'
 const sidebarActiveClass = 'opened'
 const bodyFixedClass = 'body--fixed'
 
-burgerButton.addEventListener('click', function(){
+// функция закрытия меню
+function closeMenu() {
+  burgerButton.classList.remove(burgerButtonActiveClass)
+  sidebar.classList.remove(sidebarActiveClass)
+  document.body.classList.remove(bodyFixedClass)
+}
+
+// бургер
+burgerButton.addEventListener('click', function (e) {
+  e.stopPropagation() // чтобы клик не дошёл до document
   burgerButton.classList.toggle(burgerButtonActiveClass)
   sidebar.classList.toggle(sidebarActiveClass)
   document.body.classList.toggle(bodyFixedClass)
+})
+
+// закрытие по клику на пункт меню
+sidebar.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    closeMenu()
+  }
+})
+
+// закрытие по клику вне меню
+document.addEventListener('click', (e) => {
+  const isClickInsideSidebar = sidebar.contains(e.target)
+  const isClickOnBurger = burgerButton.contains(e.target)
+
+  if (!isClickInsideSidebar && !isClickOnBurger) {
+    closeMenu()
+  }
+})
+
+
+
+let touchStartX = 0
+let touchEndX = 0
+const swipeThreshold = 70 // минимальная дистанция свайпа
+
+sidebar.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].clientX
+})
+
+sidebar.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX
+  handleSwipe()
+})
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX
+
+  // свайп влево → закрыть меню
+  if (swipeDistance < -swipeThreshold) {
+    closeMenu()
+  }
+}
+
+
+const menuLinks = sidebar.querySelectorAll('a')
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    burgerButton.classList.remove(burgerButtonActiveClass)
+    sidebar.classList.remove(sidebarActiveClass)
+    document.body.classList.remove(bodyFixedClass)
+  })
 })
 
 
