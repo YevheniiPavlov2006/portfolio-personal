@@ -115,7 +115,7 @@ function handleSwipe() {
   const swipeDistance = touchEndX - touchStartX
 
   // свайп влево → закрыть меню
-  if (swipeDistance < -swipeThreshold) {
+  if (swipeDistance > swipeThreshold) {
     closeMenu()
   }
 }
