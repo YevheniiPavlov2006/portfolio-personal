@@ -649,8 +649,7 @@ h1 {
   .header-menu a {
     font-size: 14px;
   }
-  .header-logo {
-  }
+
 }
 @media(max-width:600px){
   .container {
