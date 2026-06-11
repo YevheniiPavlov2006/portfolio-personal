@@ -447,7 +447,7 @@ button {
   }
   .full-screen-quote {
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 22px;
     color: #000;
   }
   .bg-video {
@@ -456,7 +456,7 @@ button {
 
 }
 @media(max-width:500px){
-  .full-screen {
+  .bg-video {
     background-image: url(img/full-screen-img-mobile-2.jpeg);
   }
   .full-screen__content {
