@@ -287,3 +287,11 @@ function clamp(min, value, max) {
   burgerButtonExample.addEventListener('click', function(){
     burgerButtonExample.classList.toggle(burgerButtonActiveClassExample)
   })
+
+
+
+
+
+const video = document.querySelector('.bg-video');
+
+video.playbackRate = 0.7;
