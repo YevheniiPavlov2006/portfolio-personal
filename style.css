@@ -32,7 +32,16 @@
   --blue-700: #2563eb;
 }
 [data-theme="dark"] h1{
-  color: rgb(20, 158, 202);
+  background: linear-gradient(
+    145deg,
+    #5c7cff,
+    #70b9f9
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  display: inline-block;
 }
 [data-theme="dark"] .full-screen {
   background-image: url('img/main-img-dark-1.png');
@@ -43,13 +52,13 @@
 }
 
 [data-theme="dark"] .main-photo {
-  box-shadow: 0 0 4px 4px rgb(20, 158, 202);
+  box-shadow: 0 0 4px 4px #98a9f5;
 }
 [data-theme="dark"] .about-photo {
-  box-shadow: 0 0 2px 2px rgb(20, 158, 202);
+  box-shadow: 0 0 2px 2px #98a9f5;
 }
 [data-theme="dark"] .shadow {
-  box-shadow: 0 0 7px 1px rgb(20, 158, 202);
+  box-shadow: 0 0 7px 1px #98a9f5;
 }
 [data-theme="dark"] .card-name {
   color: #262c37;
@@ -1269,9 +1278,15 @@ h1 {
 }
 .footer-button {
   padding: 16px 32px;
-  background: linear-gradient(145deg, #86e2ee, #ad7fde);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    145deg,
+    #7f91d4,
+    #877be5
+  );
   border: none;
+  box-shadow:
+    0px 2px 0px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   color: #fff;
   border-radius: 10px;
   font-size: 20px;
@@ -1280,9 +1295,9 @@ h1 {
   transition: 0.3s ease;
 
 }
+
 .footer-button:hover {
   box-shadow: none;
-
 }
 .footer-info-media {
   display: flex;
@@ -1500,7 +1515,11 @@ h1 {
   height: 150px;
   border-radius: 12px;
 
-  background: linear-gradient(145deg, #86e2ee, #ad7fde);
+  background: linear-gradient(
+    145deg,
+    #7f91d4,
+    #877be5
+  );
 
   display: flex;
   justify-content: center;
