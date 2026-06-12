@@ -91,7 +91,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -467,7 +467,7 @@ button {
     text-transform: uppercase;
   }
   .full-screen__content {
-    bottom: 35%;
+    bottom: 200px;
     padding: 15px 5px;
 
   }
