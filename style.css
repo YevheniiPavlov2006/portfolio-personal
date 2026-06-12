@@ -73,14 +73,12 @@
   color: #262c37;
 }
 [data-theme="dark"] .full-screen__content {
-  background-color: rgba(38, 44, 55, 0.9);
-  color: #F7F7F7;
 }
 [data-theme="dark"] .full-screen::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /*--------------------------------------header-burger-button-------------------------------*/
@@ -88,6 +86,14 @@
 .burger-button {
   display: none;
 }
+
+.full-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 
 @media (max-width:600px){
   .burger-button {
@@ -373,20 +379,33 @@ button {
 
 .full-screen__content {
   position: fixed;
-  bottom: 85px;
+  bottom: 50%;
+  right: 50%;
+  transform: translateY(50%) translateX(50%);
+  width: 100%;
 
-  padding: 12px 15px;
-  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
   border-radius: 10px;
   z-index: 10;
 }
-.full-screen-quote {
-  z-index: 10;
-
-  line-height: 1.3;
-  font-size: 26px;
-  color: #000;
-
+.full-screen__content-subtext {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.full-screen__content hr {
+}
+.full-screen__content-text {
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  color: #ffffff;
+  font-size: 80px;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .full-screen {
@@ -441,23 +460,25 @@ button {
   .bg-video {
     background-position: top;
   }
-  .full-screen__content {
+  .full-screen__content-text {
+    font-size: 36px;
+    padding: 5px;
+    text-align: start;
+    text-transform: uppercase;
   }
-  .full-screen-quote {
-    line-height: 1.3;
+  .full-screen__content {
+    bottom: 35%;
+    padding: 15px 5px;
+
+  }
+  .full-screen__content-subtext {
+    font-size: 18px;
+    text-align: start;
+    padding: 5px;
   }
 }
 @media(max-width:650px){
-  .full-screen__content {
-    bottom: 50px;
-    right: 20px;
-    left: 20px;
-  }
-  .full-screen-quote {
-    line-height: 1.2;
-    font-size: 22px;
-    color: #000;
-  }
+  
   .bg-video {
     background-position: calc(0% + 70%) calc(0% + 40%);
   }
@@ -466,13 +487,7 @@ button {
 @media(max-width:500px){
   .bg-video {
   }
-  .full-screen__content {
-    padding: 15px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.8);
-    right: 15px;
-    left: 15px;
-  }
+  
 }
 
 .header {
@@ -745,7 +760,7 @@ h1 {
     gap: 10px;
   }
   .header-logo {
-    font-size: 26 px;
+    font-size: 26px;
   }
 }
 
@@ -1209,7 +1224,7 @@ h1 {
   font-size: 30px;
 }
 .footer-title {
-  color: var(--white800);
+  color: #F7F7F7;
   font-size: 50px;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -1228,7 +1243,7 @@ h1 {
   letter-spacing: -0.03em;
 }
 .footer-menu div {
-  color: var(--white800);
+  color: #F7F7F7;
   font-size: 22px;
   position: relative;
   font-weight: 500;
