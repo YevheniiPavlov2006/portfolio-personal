@@ -489,14 +489,10 @@ button {
 @media(max-width:650px){
   
   .bg-video {
-    background-position: calc(0% + 70%) calc(0% + 40%);
+    background-position: calc(0% + 70%) calc(0% - 100px);
+    background-image: url('img/full-screen-mobile-new.png');
   }
 
-}
-@media(max-width:500px){
-  .bg-video {
-  }
-  
 }
 
 .header {
