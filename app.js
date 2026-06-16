@@ -19,6 +19,33 @@ new Swiper('.work-slider', {
   }
 })
 
+
+new Swiper('.feedback-slider', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false 
+  },
+  speed: 1000,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    750: {
+      slidesPerView: 1,
+    },
+    1220: {
+      slidesPerView: 1,
+    }
+  }
+})
+
 /*----------------------------Theme---------------------------------------*/
 
 

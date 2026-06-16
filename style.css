@@ -783,6 +783,14 @@ h1 {
   overflow: hidden;
   padding: 0 10px;
 }
+.feedback-slider {
+  overflow: hidden;
+  padding: 0 10px;
+  padding-bottom: 60px;
+}
+.works-title {
+  max-width: 60vw;
+}
 
 .work-card {
   text-align: center;
@@ -886,6 +894,54 @@ h1 {
   height: 180px !important;
 }
 
+.feedback-slider .swiper-slide {
+  height: auto;
+}
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+.feedback-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.feedback-card__info img {
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.feedback-card__info-name {
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+.feedback-card__message {
+  flex: 240px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+.feedback-card__rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.feedback-card__rate img {
+  width: 18px;
+  aspect-ratio: 1;
+}
+
 .card-name {
   font-size: 20px;
   font-weight: 700;
@@ -950,8 +1006,14 @@ h1 {
   .swiper-button-prev::after {
     margin-left: 20px;
   }
+  .feedback-card__message {
+    font-size: 20px;
+  }
 }
 @media (max-width:700px) {
+  .feedback-card__message {
+    flex: 200px 0;
+  }
   .work-card {
     border-radius: 15px;
   }
@@ -966,14 +1028,31 @@ h1 {
   .swiper-button-prev::after {
     margin-left: 10px;
   }
+  .feedback-card__info-name {
+    font-size: 24px;
+  }
+  .feedback-card__message {
+    width: 100%;
+    padding: 0 12px;
+    font-size: 18px;
+  }
+  .feedback-card__info img {
+    width: 55px;
+  }
+  .feedback-card {
+    gap: 40px;
+  }
 }
 @media(max-width:600px){
   .work-slider {
     padding: 0 2px;
   }
+  .feedback .slider-button-panel {
+    top: -280px;
+  }
   .slider-button-panel {
     position: absolute;
-    top: -280px;
+    top: -300px;
     right: 40px;
     justify-content: end;
     width: 100px;
